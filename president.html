@@ -32,11 +32,39 @@
             if (secret == guess) {
                 correct++;
                 alert("You got it right");
-                out.innerHTML = "Correct " + correct +  " Wrong " + wrong;
+                out.innerHTML = "Correct " + correct + " Wrong " + wrong;
             } else {
                 wrong++
                 alert("Wrong President");
-                out.innerHTML =  "Correct " + correct +  " Wrong " + wrong;
+                out.innerHTML = "Correct " + correct + " Wrong " + wrong;
+            }
+        }
+    </script>
+
+    <label>Image changes on click</label><br>
+    <div class="container">
+        <img src="Avocet.jpg" id="image" alt="Avocet" style="height: 100px;width: 100px;" onclick="swapImage()">
+    </div>
+
+    <script>
+        let useImage = 1;
+        function swapImage() {
+            switch (useImage) {
+                case 1:
+                    document.getElementById("image").src = "Avocet.jpg";
+                    useImage++;
+                    break;
+                case 2:
+                    document.getElementById("image").src = "Gadwall.jpg";
+                    useImage++;
+                    break;
+                case 3:
+                    document.getElementById("image").src = "Ultramarine Flycatcher.jpg";
+                    useImage++;
+                    break;
+                default:
+                    document.getElementById("image").src = "Avocet.jpg";
+                    break;
             }
         }
     </script>
