@@ -10,19 +10,31 @@
     <h2>Anjana Thanguturi orders a computer</h2>
 
     <form>
-        <input type="checkbox" id="memory" name="memory" value="extra" checked>
+        <input type="checkbox" id="memory" name="memory" value="extra">
         <label for="memory">Extra memory</label></br>
 
         <input type="checkbox" id="mouse" name="mouse" value="Mouse">
         <label for="mouse">Mouse</label></br>
 
-        <input type="checkbox" id="service" name="service" value="cell" checked>
+        <input type="checkbox" id="service" name="service" value="cell">
         <label for="Service">Cell Service</label></br>
 
         <input type="button" onclick="orderComputer()" value="Order a computer">
     </form>
 
     <p id="result">This text will be replaced </p>
+
+    <form>
+        <label for="propertyName">Enter a property name</label>
+        <input type ="text" id="propertyName" name="propertyName" value= "engraved"> <br>
+    
+        <label for="propertyValue">Enter a value</label>
+        <input type ="text" id="propertyValue" name="propertyValue" autofocus> <br>
+    
+        <input type="button" onclick="updateComputer()" value="Update the computer">
+    </form>
+
+    <p id="updateComputer">This text will be replaced </p>
 
     <script>
         let my_computer = {};
@@ -38,7 +50,13 @@
                 "Extra Money: " + my_computer.extra_memory + ",<br> Mouse: " + my_computer.mouse + ", <br>Cell Service: " + my_computer.service;
         }
 
+        function updateComputer(){
+            propertyName = document.getElementById("propertyName").value;
+            propertyValue = document.getElementById("propertyValue").value;
+            my_computer["propertyName"] = propertyValue;
+            document.getElementById("updateComputer").innerHTML = 
+            propertyName + " property : " + my_computer.propertyName;
+        }
     </script>
 </body>
-
 </html>
