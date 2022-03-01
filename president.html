@@ -11,7 +11,7 @@
 
     <form>
         <label for="secret_president">Enter the secret president name </label>
-        <input type="text" id="secret_president" name="secret_president" value="George Washington"><br>
+        <input type="password" id="secret_president" name="secret_president" value="George Washington"><br>
 
         <label for="guess_president">Guess the president</label>
         <input type="text" id="guess_president" name="guess_president" autofocus> <br>
@@ -37,7 +37,13 @@
                 wrong++
                 alert("Wrong President");
                 out.innerHTML = "Correct " + correct + " Wrong " + wrong;
+                if(wrong == 3){
+                    wrongGuess();
+                }
             }
+        }
+        function wrongGuess(){
+            alert("Sorry, game over.");
         }
     </script>
 
