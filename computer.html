@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Orders</title>
+</head>
+
+<body>
+
+    <h2>Anjana Thanguturi orders a computer</h2>
+
+    <form>
+        <input type="checkbox" id="memory" name="memory" value="extra" checked>
+        <label for="memory">Extra memory</label></br>
+
+        <input type="checkbox" id="mouse" name="mouse" value="Mouse">
+        <label for="mouse">Mouse</label></br>
+
+        <input type="checkbox" id="service" name="service" value="cell" checked>
+        <label for="Service">Cell Service</label></br>
+
+        <input type="button" onclick="orderComputer()" value="Order a computer">
+    </form>
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        let my_computer = {};
+        function orderComputer() {
+            my_computer = {}
+            extra_memory = document.getElementById("memory").checked;
+            mouse = document.getElementById("mouse").checked;
+            service = document.getElementById("service").checked;
+            my_computer["extra_memory"] = extra_memory;
+            my_computer["mouse"] = mouse;
+            my_computer["service"] = service;
+            document.getElementById("result").innerHTML =
+                "Extra Money: " + my_computer.extra_memory + ",<br> Mouse: " + my_computer.mouse + ", <br>Cell Service: " + my_computer.service;
+        }
+
+    </script>
+</body>
+
+</html>
