@@ -22,22 +22,22 @@
         <input type="button" onclick="orderComputer()" value="Order a computer">
     </form>
 
-    <p id="result">This text will be replaced </p>
-
+    <br>
     <form>
         <label for="propertyName">Enter a property name</label>
-        <input type ="text" id="propertyName" name="propertyName" value= "engraved"> <br>
-    
+        <input type="text" id="propertyName" name="propertyName" value="engraved"> <br>
+
         <label for="propertyValue">Enter a value</label>
-        <input type ="text" id="propertyValue" name="propertyValue" autofocus> <br>
-    
+        <input type="text" id="propertyValue" name="propertyValue" autofocus> <br>
+
         <input type="button" onclick="updateComputer()" value="Update the computer">
     </form>
 
-    <p id="updateComputer">This text will be replaced </p>
+    <p id="result">This text will be replaced </p>
 
     <script>
         let my_computer = {};
+        out = document.getElementById("result");
         function orderComputer() {
             my_computer = {}
             extra_memory = document.getElementById("memory").checked;
@@ -46,17 +46,18 @@
             my_computer["extra_memory"] = extra_memory;
             my_computer["mouse"] = mouse;
             my_computer["service"] = service;
-            document.getElementById("result").innerHTML =
+            out.innerHTML =
                 "Extra Money: " + my_computer.extra_memory + ",<br> Mouse: " + my_computer.mouse + ", <br>Cell Service: " + my_computer.service;
         }
 
-        function updateComputer(){
+        function updateComputer() {
             propertyName = document.getElementById("propertyName").value;
             propertyValue = document.getElementById("propertyValue").value;
             my_computer["propertyName"] = propertyValue;
-            document.getElementById("updateComputer").innerHTML = 
-            propertyName + " property : " + my_computer.propertyName;
+            out.innerHTML =
+                propertyName + " property : " + my_computer.propertyName;
         }
     </script>
 </body>
+
 </html>
