@@ -38,6 +38,40 @@
         }
     </script>
 
+    <h3> Calculations </h3>
+    <form>
+        <input type="radio" id="times" name="calculate" value="times" onclick="chooseOp()">
+        <label for="times">*</label></br>
+
+        <input type="radio" id="divide" name="calculate" value="divide" onclick="chooseOp()">
+        <label for="divide">/</label></br>
+
+        <input type="radio" id="exponent" name="calculate" value="exponent" onclick="chooseOp()">
+        <label for="exponent">**</label></br>
+    </form>
+
+    <p id="calValues">This text will be replaced </p>
+
+    <script>
+        amount = document.getElementById("amount").value;
+        tip_increase = document.getElementById("tip_increase").value;
+        out = document.getElementById("calValues");
+        function chooseOp() {
+            times = document.getElementById("times").checked;
+            divide = document.getElementById("divide").checked;
+            exponent = document.getElementById("exponent").checked;
+            if (times) {
+                out.innerHTML = "Amount * Tip increase : "+amount * tip_increase;
+            }
+            if (divide) {
+                out.innerHTML = "Amount / Tip increase : "+amount / tip_increase;
+            }
+            if (exponent) {
+                out.innerHTML = "Amount ** Tip increase : "+amount ** tip_increase;
+            }
+        }
+    </script>
+
 </body>
 
 </html>
